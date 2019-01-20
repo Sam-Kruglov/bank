@@ -1,0 +1,9 @@
+.idea/*
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+*.iml
+
+target/
+
+#this is a file used for a GraphQL IntelliJ plugin
+graphql.config.json
