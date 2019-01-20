@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.samkruglov.bank</groupId>
+    <artifactId>service</artifactId>
+    <description>
+        Service contains only business logic (operations involving DAO).
+        Has no knowledge on DAO implementation or API.
+    </description>
+
+    <parent>
+        <groupId>com.samkruglov</groupId>
+        <artifactId>bank</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.samkruglov.bank</groupId>
+            <artifactId>domain</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+
+        <!-- Controller must not see repositories.
+         Because of that we also hide services behind interfaces. -->
+        <dependency>
+            <groupId>com.samkruglov.bank</groupId>
+            <artifactId>dao</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>

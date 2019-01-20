@@ -1,0 +1,23 @@
+logging:
+  level:
+    ROOT: off
+    com.samkruglov.bank: debug
+    org:
+
+    #@formatter:off
+      #sql parameters (each on a new line)
+      #hibernate.type.descriptor: trace
+
+      #transactions
+      #springframework.transaction.interceptor: trace
+      #@formatter:on
+
+spring:
+  application.name: bank service
+  datasource:
+    url: jdbc:hsqldb:file:~/test
+    username: sa
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true

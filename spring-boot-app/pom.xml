@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.samkruglov.bank</groupId>
+    <artifactId>spring-boot-app</artifactId>
+    <description>
+        This module must only contain configurations to run the application.
+        All of the dependency codebase must be declared only as a runtime scope.
+    </description>
+
+    <parent>
+        <groupId>com.samkruglov</groupId>
+        <artifactId>bank</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <sonar.coverage.exclusions>**</sonar.coverage.exclusions>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.samkruglov.bank.api</groupId>
+            <artifactId>api-graphql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.samkruglov.bank.api</groupId>
+            <artifactId>api-rest</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.samkruglov.bank</groupId>
+            <artifactId>dao</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Exclude Spring Boot's Default Logging -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Add Log4j2 Dependency -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <configuration>
+                        <!-- we don't want to track coverage because nothing is mocked so it is not fair -->
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

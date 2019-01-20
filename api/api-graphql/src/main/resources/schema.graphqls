@@ -1,0 +1,82 @@
+schema{
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation{
+    createAccount(userId: ID!, type: AccountType): Account!
+    removeAccount(id: ID!): Boolean!
+    createUser(firstName: String!, lastName: String! ): User!
+    removeUser(id: ID!): Boolean!
+    #@formatter:off
+    createCard(
+        accountId: ID!
+        expiryDate: LocalDate!
+        cardIssueDate: LocalDate
+        number: String
+    ): Card!
+    #@formatter:on
+    removeCard(id: ID!): Boolean!
+}
+
+type Query {
+    account(id: ID!): Account
+    user(id: ID!): User
+    card(id: ID!): Card
+}
+
+interface Auditable {
+    id: ID!
+    dateCreated: ZonedDateTime!
+    lastUpdated: ZonedDateTime!
+}
+
+type Account implements Auditable {
+    id: ID!
+    dateCreated: ZonedDateTime!
+    lastUpdated: ZonedDateTime!
+    user: User!
+    type : AccountType!
+    cards: [Card!]!
+}
+
+enum AccountType{
+    BUSINESS
+    REGULAR
+}
+
+type Card implements Auditable {
+    id: ID!
+    dateCreated: ZonedDateTime!
+    lastUpdated: ZonedDateTime!
+    expiryDate: LocalDate!
+    account: Account!
+    issueDate: LocalDate
+    number: String
+}
+
+type User implements Auditable {
+    id: ID!
+    dateCreated: ZonedDateTime!
+    lastUpdated: ZonedDateTime!
+    firstName: String!
+    lastName: String!
+    accounts: [Account!]!
+}
+
+
+scalar ZonedDateTime
+
+# date time ------------- see https://github.com/donbeave/graphql-java-datetime
+# java.util.Date implementation
+scalar Date
+
+# java.time.LocalDate implementation
+scalar LocalDate
+
+# java.time.LocalDateTime implementation
+scalar LocalDateTime
+
+# java.time.LocalTime implementation
+scalar LocalTime
+# date time -------------

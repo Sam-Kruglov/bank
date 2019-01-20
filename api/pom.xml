@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.samkruglov.bank</groupId>
+    <artifactId>api</artifactId>
+    <packaging>pom</packaging>
+    <description>
+        API exposes Services.
+        Has no knowledge on DAO.
+    </description>
+
+    <parent>
+        <groupId>com.samkruglov</groupId>
+        <artifactId>bank</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <sonar.coverage.exclusions>**/view/**</sonar.coverage.exclusions>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.samkruglov.bank</groupId>
+            <artifactId>service</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>api-rest</module>
+        <module>api-graphql</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-Amapstruct.defaultComponentModel=spring</arg>
+                        <arg>-Amapstruct.unmappedTargetPolicy=ERROR</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    #show-sql: true
+
+logging:
+  level:
+    ROOT: off
+    com.samkruglov.bank: trace
+    org:
+
+      #@formatter:off
+      #sql parameters (each on a new line)
+      #hibernate.type.descriptor: trace
+
+      springframework:
+
+        #logging about @Sql annotation
+        #jdbc: trace
+
+        #transactions in production code
+        #transaction.interceptor: trace
+
+        #transactions in test code
+        #test.context.transaction: debug
+        #@formatter:on
