@@ -1,5 +1,10 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Sam-Kruglov_bank&metric=coverage)](https://sonarcloud.io/dashboard?id=Sam-Kruglov_bank)
 
+
+Notice: 
+Currently reimplementing everything and beyond to be absolutely perfect in branch `under_construction`. 
+See `Architectural Plans.md` in there for details.
+
 # Bank Service
 
 A sample application that allows create or retrieve one of the available entities:
