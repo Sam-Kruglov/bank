@@ -12,10 +12,29 @@
     <parent>
         <groupId>com.samkruglov</groupId>
         <artifactId>bank</artifactId>
-        <version>0.0.1</version>
+        <version>${revision}</version>
     </parent>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.samkruglov.bank.domain.core</groupId>
+            <artifactId>internal</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-spring-boot-starter</artifactId>
+            <version>${axon.version}</version>
+            <exclusions>
+                <!-- for now, storing everything in-memory -->
+                <exclusion>
+                    <groupId>org.axonframework</groupId>
+                    <artifactId>axon-server-connector</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
         <!-- Util -->
 
