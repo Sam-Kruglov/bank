@@ -2,7 +2,7 @@
 
 
 Notice: 
-Currently reimplementing everything and beyond to be absolutely perfect in branch `under_construction`. 
+Currently reimplementing everything and beyond to be absolutely perfect in branch `under_construction`(now `master`). 
 See `Architectural Plans.md` in there for details.
 
 # Bank Service
