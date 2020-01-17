@@ -1,1 +1,4 @@
 spring.application.name: bank
+
+# print mongo db queries and a lot of garbage as well
+#logging.level.org.mongodb.driver.protocol: trace
