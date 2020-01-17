@@ -1,0 +1,11 @@
+subscription GetAllPeople {
+    people{
+        id
+        firstName
+        lastName
+        address{
+            city
+            countryCode
+        }
+    }
+}

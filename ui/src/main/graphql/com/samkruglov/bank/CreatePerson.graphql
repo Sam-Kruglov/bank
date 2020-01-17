@@ -1,0 +1,13 @@
+mutation CreateJosh(
+    $firstName: String!,
+    $lastName: String!,
+    $email: String!,
+    $phone: String!
+) {
+    createPerson(
+        firstName:$firstName
+        lastName:$lastName
+        email:$email
+        phone:$phone
+    )
+}

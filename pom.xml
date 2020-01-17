@@ -98,6 +98,7 @@
         <module>domain</module>
         <module>spring-boot-app</module>
         <module>api</module>
+        <module>ui</module>
     </modules>
 
     <build>

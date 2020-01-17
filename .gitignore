@@ -7,3 +7,8 @@ target/
 
 #this is a file used for a GraphQL IntelliJ plugin
 .graphqlconfig
+
+# Vaadin stuff
+node_modules/
+build/
+webpack.generated.js

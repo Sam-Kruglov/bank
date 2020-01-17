@@ -1,0 +1,5 @@
+server.port: 80
+
+backend:
+  graphql-url: http://localhost:8080/graphql
+  web-socket-url: ws://localhost:8080/subscriptions

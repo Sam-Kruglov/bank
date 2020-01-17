@@ -1,0 +1,17 @@
+mutation SetPersonAddress(
+    $id: ID!
+    $apartmentNumber: String
+    $houseNumber: String!
+    $street: String!
+    $city: String!
+    $countryCode: String!
+){
+    setPersonAddress(
+        personId:$id
+        apartmentNumber:$apartmentNumber
+        houseNumber:$houseNumber
+        street:$street
+        city:$city
+        countryCode:$countryCode
+    )
+}

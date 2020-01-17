@@ -1,0 +1,16 @@
+query GetPerson($id: ID!){
+    person(id: $id){
+        id
+        firstName
+        lastName
+        email
+        phone
+        address{
+            houseNumber
+            apartmentNumber
+            street
+            city
+            countryCode
+        }
+    }
+}
