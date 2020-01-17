@@ -6,4 +6,4 @@
 target/
 
 #this is a file used for a GraphQL IntelliJ plugin
-graphql.config.json
+.graphqlconfig

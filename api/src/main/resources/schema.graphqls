@@ -1,0 +1,47 @@
+type Query{
+    person(id: ID!): Person
+}
+
+type Subscription{
+
+    # emits all of them
+    people: Person!
+}
+
+type Mutation{
+
+    # returns id as soon as creation is accepted
+    createPerson(
+        firstName: String!,
+        lastName: String!,
+        email: String!,
+        phone: String!,
+    ): String!
+
+    # returns true as soon as creation is accepted. Or throws an error.
+    setPersonAddress(
+        personId: ID!,
+        apartmentNumber: String,
+        houseNumber: String!,
+        street: String!,
+        city: String!,
+        countryCode: String!
+    ): Boolean!
+}
+
+type Person {
+    id: ID!,
+    firstName: String!,
+    lastName: String!,
+    email: String!,
+    phone: String!,
+    address: Address
+}
+
+type Address {
+    apartmentNumber: String,
+    houseNumber: String!,
+    street: String!,
+    city: String!,
+    countryCode: String!
+}

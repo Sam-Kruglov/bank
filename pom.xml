@@ -91,18 +91,13 @@
                 <version>${public-messages.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.samkruglov.bank.domain.core</groupId>
-                <artifactId>internal</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
     <modules>
         <module>domain</module>
         <module>spring-boot-app</module>
+        <module>api</module>
     </modules>
 
     <build>

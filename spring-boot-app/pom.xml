@@ -25,8 +25,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.samkruglov.bank.domain</groupId>
-            <artifactId>read</artifactId>
+            <groupId>com.samkruglov.bank</groupId>
+            <artifactId>api</artifactId>
             <version>${revision}</version>
             <scope>runtime</scope>
         </dependency>
