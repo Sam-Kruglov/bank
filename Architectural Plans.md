@@ -30,7 +30,7 @@ Tech stack:
 - ✅ Event Sourcing & CQRS abstraction: [Axon Framework](https://axoniq.io/)
 - Axon Server CE as Event Storage and Messaging all-in-one solution
 - ✅ MongoDB 
-- `docker-compose.yml` for one-click local run
+- ✅ `docker-compose.yml` for one-click local run
 - CircleCI or similar
 - Sonar Cloud as a static analysis tool
 - ✅ Automatic code formatting config
