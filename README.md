@@ -3,6 +3,8 @@
 A Web Admin Portal for the whole bank. 
 Create customers, watch their transactions in real-time, and maybe something else. Work in progress. 
 
+**Please, Note** that I [specialise in backend development](https://github.com/Sam-Kruglov/bank/issues/7) but also trying to learn front end.
+
 #### See [Architectural Plans](Architectural%20Plans.md)
  
 ---
