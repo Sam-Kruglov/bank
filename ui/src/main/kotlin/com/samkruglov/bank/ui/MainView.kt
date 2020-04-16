@@ -42,10 +42,10 @@ class MainView(val client: ApolloClient, val peopleForm: PeopleForm) : Horizonta
         peopleGrid.setItems(peopleList)
         peopleGrid.addColumn { "${it.firstName} ${it.lastName}" }.setHeader("Name")
         peopleGrid.addColumn {
-            if (it.address.isEmpty) {
+            if (it.address == null) {
                 return@addColumn "right click to set"
             }
-            val address: GetAllPeopleSubscription.Address = it.address.get()
+            val address: GetAllPeopleSubscription.Address = it.address
             "${address.countryCode}, ${address.city}"
         }.setHeader("Address")
         val gridContextMenu = peopleGrid.addContextMenu()

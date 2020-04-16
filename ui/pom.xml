@@ -131,12 +131,10 @@
                     <maxAttempts>240</maxAttempts>
                 </configuration>
             </plugin>
-            <!--
-                Take care of synchronizing java dependencies and imports in
-                package.json and main.js files.
-                It also creates webpack.config.js if not exists yet.
-            -->
             <plugin>
+                <!-- Takes care of synchronizing java dependencies and imports in package.json and main.js files.
+                It also creates webpack.config.js if not exists yet.
+                -->
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
                 <version>${vaadin.version}</version>
@@ -149,6 +147,8 @@
                 </executions>
             </plugin>
             <plugin>
+                <!-- Generates classes from backend GraphQL schema to easily call the API.
+                -->
                 <groupId>com.github.sparow199</groupId>
                 <artifactId>apollo-client-maven-plugin</artifactId>
                 <version>2.4.2</version>
@@ -159,8 +159,23 @@
                         </goals>
                         <configuration>
                             <rootPackageName>com.samkruglov.bank.ui.gen</rootPackageName>
-                            <!-- todo check up on https://github.com/aoudiamoncef/apollo-client-maven-plugin/issues/12 -->
-                            <!--                            <generateKotlinModels>true</generateKotlinModels>-->
+                            <generateKotlinModels>true</generateKotlinModels>
+                            <!-- Must run this manually whenever backend GraphQL schema changes.
+                            This will generate the schema.json before generating classes from it.
+                            This requires backend service running.
+                            It is too complex to try setting this up using Dockerfile,
+                            only possible with a proper deployment system. Configuring such is not feasable
+                            for this demo project, so the manual approach is good enough, at least we don't have to
+                            copy-paste the schema.json ourselves.
+
+                            <generateIntrospectionFile>true</generateIntrospectionFile>
+                            <schemaUrl>http://localhost:8080/graphql</schemaUrl>
+
+                            todo abstract away the url
+                            todo check up on
+                            https://github.com/aoudiamoncef/apollo-client-maven-plugin/issues/12#issuecomment-614756589
+                            <introspectionFile>${project.build.directory}/graphql/schema.json</introspectionFile>
+                            -->
                         </configuration>
                     </execution>
                 </executions>
