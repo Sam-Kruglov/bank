@@ -1,8 +1,8 @@
 package com.samkruglov.bank.api.graphql
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver
 import com.samkruglov.bank.domain.core.shared.CreatePersonCommand
 import com.samkruglov.bank.domain.core.shared.SetPersonAddressCommand
+import graphql.kickstart.tools.GraphQLMutationResolver
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.springframework.stereotype.Service
 

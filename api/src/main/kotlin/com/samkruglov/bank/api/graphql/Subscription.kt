@@ -1,9 +1,9 @@
 package com.samkruglov.bank.api.graphql
 
-import com.coxautodev.graphql.tools.GraphQLSubscriptionResolver
 import com.samkruglov.bank.api.graphql.config.ApiMapper
 import com.samkruglov.bank.api.graphql.type.Person
 import com.samkruglov.bank.domain.read.service.PersonReadService
+import graphql.kickstart.tools.GraphQLSubscriptionResolver
 import org.reactivestreams.Publisher
 import org.springframework.stereotype.Service
 

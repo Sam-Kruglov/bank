@@ -14,10 +14,8 @@ import com.vaadin.flow.component.grid.Grid
 import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout
 import com.vaadin.flow.component.orderedlayout.VerticalLayout
-import com.vaadin.flow.component.page.Push
 import com.vaadin.flow.component.textfield.TextField
 import com.vaadin.flow.router.Route
-import com.vaadin.flow.shared.communication.PushMode
 import com.vaadin.flow.spring.annotation.SpringComponent
 import com.vaadin.flow.spring.annotation.UIScope
 import java.time.Duration
@@ -25,7 +23,6 @@ import java.util.*
 
 
 @Route
-@Push(PushMode.MANUAL)
 class MainView(val client: ApolloClient, val peopleForm: PeopleForm) : HorizontalLayout() {
 
     companion object {
