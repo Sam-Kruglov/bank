@@ -20,7 +20,7 @@ The easiest one-click way to do it. Will take a while.
 
 1. [Install Docker](https://www.docker.com/products/docker-desktop)
 2. Run [`docker-compose up`](docker-compose.yml). 
-It will download all the libraries (into your `~/.m2` directory) and start everything.
+It will download all the libraries (into your `~/.m2` directory and into `ui/node_modules`) and start everything.
 
 ### JDK 11
 The fastest way but requires some typing.
